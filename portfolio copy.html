@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caroline Williams | Portfolio</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    .portfolio-card img {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .modal-lg {
+      max-width: 80%;
+    }
+
+    .modal-content {
+      border-radius: 10px;
+    }
+
+    .modal-body {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .modal-body h3 {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 15px;
+    }
+
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .portfolio-item {
+      flex: 1 1 calc(25% - 30px); /* 4 per row */
+    }
+
+    @media (max-width: 992px) {
+      .portfolio-item {
+        flex: 1 1 calc(50% - 30px);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .portfolio-item {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR + TITLE -->
+<nav>
+  <div class="navbar" id="mynavbar">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT ME</a>
+    <a href="resume.html">RESUME</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</nav>
+
+<div class="about_me_title">
+  <div class="about_me_text">
+    <h1>PORTFOLIO</h1>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<!-- <div style="background-color: var(--alternative); padding: 40px 0;">
+  <div style="max-width: 1800px; margin: 0 auto;">
+    <div class="portfolio_cont text-center mb-4">
+      <button class="portbtn portactive" onclick="filterSelection('all')"> Show all</button>
+      <button class="portbtn" onclick="filterSelection('GIS')"> GIS</button>
+      <button class="portbtn" onclick="filterSelection('remotesensing')"> Remote Sensing</button>
+      <button class="portbtn" onclick="filterSelection('webmaps')"> Web Mapping</button>
+      <button class="portbtn" onclick="filterSelection('clark')"> Clark Labs</button>
+      <button class="portbtn" onclick="filterSelection('develop')"> NASA DEVELOP</button>
+    </div> -->
+
+    <!-- PORTFOLIO GRID -->
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- 🔥 Card 1 -->
+      <div class="portfolio-item GIS develop">
+        <div class="card portfolio-card h-100" data-bs-toggle="modal" data-bs-target="#modal1">
+          <img src="images/image.png" class="card-img-top" alt="Wildfire">
+          <div class="card-body">
+            <h5 class="card-title">Wildfire Severity Assessment</h5>
+            <p class="card-text">Tenerife wildfire (2023) assessment using Sentinel-2 imagery.</p>
+          </div>
+        </div>
+      </div>
+
+       <!-- 🔥 Card 2 -->
+       <div class="portfolio-item GIS develop">
+        <div class="card portfolio-card h-100" data-bs-toggle="modal" data-bs-target="#modal2">
+          <img src="images/image2.png" class="card-img-top" alt="Wildfire">
+          <div class="card-body">
+            <h5 class="card-title">Mapping and Monitoring Urban Expansion in Makurdi</h5>
+            <p class="card-text">This project analyzes LULC changes, with a specific focus on urban expansion, in Makurdi</p>
+          </div>
+        </div>
+      </div>
+
+       <!-- 🔥 Card 3 -->
+       <div class="portfolio-item GIS develop">
+        <div class="card portfolio-card h-100" data-bs-toggle="modal" data-bs-target="#modal3">
+          <img src="images/image3.png" class="card-img-top" alt="Wildfire">
+          <div class="card-body">
+            <h5 class="card-title">Spatial Analysis of Oil and Gas Pipeline Accidents in Texas</h5>
+            <p class="card-text">Conducted a comprehensive spatial analysis of historical pipeline accidents.</p>
+          </div>
+        </div>
+      </div>
+
+       <!-- 🔥 Card 4 -->
+       <div class="portfolio-item GIS develop">
+        <div class="card portfolio-card h-100" data-bs-toggle="modal" data-bs-target="#modal4">
+          <img src="images/image4.png" class="card-img-top" alt="Wildfire">
+          <div class="card-body">
+            <h5 class="card-title">Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria</h5>
+            <p class="card-text">Developed a satellite-based approach to map and analyze landfill expansion in Lagos, Nigeria, using Sentinel-2 and Landsat imagery..</p>
+          </div>
+        </div>
+      </div>
+
+<!-- 📦 MODALS -->
+
+<!-- Modal 1 -->
+<div class="modal fade" id="modal1" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">   
+      <div class="modal-body d-flex flex-wrap">
+        <div class="col-md-6">
+          <img src="images/image.png" alt="Wildfire Project">
+        </div>
+        <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
+          <h3>Wildfire Severity Assessment (Tenerife, 2023)</h3>
+          <p>Sentinel-2 satellite analysis of fire-affected areas.</p>
+          <p><strong>Skills:</strong> Python, Remote Sensing, Raster Analysis<br>
+          <strong>Tools:</strong> Sentinel-2, Rasterio, Pandas</p>
+          <a href="documents/Wildfire Severity .pdf" target="_blank" class="btn btn-primary mt-3">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 2 -->
+<!-- <div class="modal fade" id="modal2" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">   
+      <div class="modal-body d-flex flex-wrap">
+        <div class="col-md-6">
+          <img src="images/image2.png" alt="Wildfire Project">
+        </div>
+        <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
+          <h3>Mapping and Monitoring Urban Expansion in Makurdi, Nigeria (2001–2020) Using Remote Sensing</h3>
+          <p>This project analyzes LULC changes, with a specific focus on urban expansion, in Makurdi, Benue State, Nigeria, from 2001 to 2020, using remote sensing data</p>
+          <p><strong>Skills:</strong> Technologies & Skills Used <br>
+            ✅ Remote Sensing | ✅ GIS | ✅ QGIS/ArcGIS Pro | ✅ Satellite Data Analysis <br>
+            Data Sources: Landsat imagery (ETM, OLI) <br>
+            Tools: QGIS, ArcGIS, ERDAS IMAGINE, ENVI, Google Earth Engine (GEE) <br>
+            Techniques Used: Supervised classification, change detection analysis <br>
+            Validation: Accuracy assessment using ground-truth/reference data<br>
+          <a href="projects/NASA-DEVELOP-PUP-Projects.html" target="_blank" class="btn btn-primary mt-3">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Modal 3 -->
+<!-- <div class="modal fade" id="modal3" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">   
+      <div class="modal-body d-flex flex-wrap">
+        <div class="col-md-6">
+          <img src="images/image3.png" alt="Wildfire Project">
+        </div>
+        <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
+          <h3>Spatial Analysis of Oil and Gas Pipeline Accidents in Texas</h3>
+          <p>Conducted a comprehensive spatial analysis of historical pipeline accidents, enabling an evaluation of the potential human and environmental exposure within Texas.</p>
+          <p><strong>Skills:</strong> Technologies & Skills Used <br>
+            ✅ R ( sf, tidyverse,terra and mapsf) | ✅ GIS | ✅ Spatial analysis | ✅ Spatial statistics, Hotspot analysis (Local Moran’s)<br>
+            Data Sources & APIs: U.S. DOT Pipeline and Hazardous Materials Safety Administration dataset, U.S. Census Bureau (tidycensus package), Texas Water Development Board GIS data <br>
+            
+
+          <a href="projects/NASA-DEVELOP-PUP-Projects.html" target="_blank" class="btn btn-primary mt-3">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Modal 4 -->
+<!-- <div class="modal fade" id="modal4" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">   
+      <div class="modal-body d-flex flex-wrap">
+        <div class="col-md-6">
+          <img src="images/image2.png" alt="Wildfire Project">
+        </div>
+        <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
+          <h3>Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria</h3>
+          <p>Developed a satellite-based approach to map and analyze landfill expansion in Lagos, Nigeria, using Sentinel-2 and Landsat imagery.</p>
+          <p><strong>Skills:</strong> Technologies & Skills Used <br>
+            ✅ Remote Sensing | ✅ GIS | ✅ QGIS/ArcGIS Pro | ✅ Satellite Data Analysis <br>
+            Data Sources: Landsat imagery (ETM, OLI) <br>
+            Tools Used: QGIS, ArcGIS, ERDAS IMAGINE, ENVI, Google Earth Engine (GEE) <br>
+            Data Sources: Sentinel-2, and Landsat 8 <br>
+
+          <a href="projects/NASA-DEVELOP-PUP-Projects.html" target="_blank" class="btn btn-primary mt-3">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  -->
+
+  <!-- Modal 2 -->
+<div class="modal fade" id="modal2" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">   
+      <div class="modal-body d-flex flex-wrap">
+        <div class="col-md-6">
+          <img src="images/image2.png" alt="Urban Expansion Project" class="img-fluid">
+        </div>
+        <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
+          <h3>Mapping and Monitoring Urban Expansion in Makurdi</h3>
+          <p>This project analyzes LULC changes, with a specific focus on urban expansion, in Makurdi, Benue State, Nigeria, from 2001 to 2020, using remote sensing data.</p>
+          <p><strong>Skills:</strong><br>
+            ✅ Remote Sensing | ✅ GIS | ✅ QGIS/ArcGIS Pro | ✅ Satellite Data Analysis<br>
+            <strong>Tools:</strong> QGIS, ArcGIS, ERDAS IMAGINE, ENVI, Google Earth Engine (GEE)<br>
+            <strong>Techniques:</strong> Supervised classification, change detection, accuracy assessment
+          </p>
+          <a href="documents/landuse project.pdf" target="_blank" class="btn btn-primary mt-3">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="modal3" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">   
+      <div class="modal-body d-flex flex-wrap">
+        <div class="col-md-6">
+          <img src="images/image3.png" alt="Pipeline Accidents Project" class="img-fluid">
+        </div>
+        <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
+          <h3>Spatial Analysis of Oil and Gas Pipeline Accidents in Texas</h3>
+          <p>Conducted a comprehensive spatial analysis of historical pipeline accidents, enabling an evaluation of the potential human and environmental exposure within Texas.</p>
+          <p><strong>Skills:</strong><br>
+            ✅ R (sf, tidyverse, terra, mapsf) | ✅ GIS | ✅ Spatial analysis & statistics (Local Moran’s)<br>
+            <strong>Data Sources:</strong> U.S. DOT PHMSA, U.S. Census (tidycensus), Texas Water Development Board
+          </p>
+          <a href="documents/Pipeline Accidents .pdf" target="_blank" class="btn btn-primary mt-3">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade" id="modal4" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">   
+      <div class="modal-body d-flex flex-wrap">
+        <div class="col-md-6">
+          <img src="images/image4.png" alt="Landfill Dynamics Project" class="img-fluid">
+        </div>
+        <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
+          <h3>Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria</h3>
+          <p>Developed a satellite-based approach to map and analyze landfill expansion in Lagos, Nigeria, using Sentinel-2 and Landsat imagery.</p>
+          <p><strong>Skills:</strong><br>
+            ✅ Remote Sensing | ✅ GIS | ✅ QGIS/ArcGIS Pro | ✅ Classification Analysis<br>
+            <strong>Data Sources:</strong> Sentinel-2, Landsat 8<br>
+            <strong>Tools:</strong> GEE, QGIS, ENVI, ArcGIS, ERDAS IMAGINE
+          </p>
+          <a href="documents/First project.pdf" target="_blank" class="btn btn-primary mt-3">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="about_me_interests_cont_pg2">
+  <div class="about_me_interests_pg2 text-center text-white p-4" style="background-color: #222;">
+    <h2>Contact</h2>
+    <p>Please feel free to contact me at my email address or through my LinkedIn Account below.</p>
+    <h2>Email</h2>
+    <p><a style="color: white; text-decoration: none;" href="mailto:reginaderi19@gmail.com">reginaderi19@gmail.com</a></p>
+  </div>
+</div>
+
+<hr style="color: white; width: auto; height: 3px;" />
+
+<!-- FOOTER -->
+<div class="top_footer">
+  <p style="font-size: 24px;">Contact Me</p>
+  <a href="https://www.linkedin.com/in/caroline-ann-williams/"><i class="fa fa-linkedin"></i></a>
+  <a href="https://github.com/cawilliams719"><i class="fa fa-github"></i></a>
+</div>
+<div class="bottom_footer">
+  <p><small>&copy; Copyright 2023, Caroline Williams</small></p>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Filter Logic -->
+<script>
+  function filterSelection(category) {
+    const items = document.querySelectorAll('.portfolio-item');
+    if (category === 'all') category = '';
+    items.forEach(item => {
+      item.style.display = item.classList.contains(category) || category === '' ? 'block' : 'none';
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    filterSelection('all');
+  });
+</script>
+
+</body>
+</html>
