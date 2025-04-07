@@ -12,97 +12,65 @@
 </head>
 
 <body>
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav class="navbar" id="mynavbar">
     <a href="index.html" class="active">HOME</a>
     <a href="about.html">ABOUT ME</a>
     <a href="portfolio.html">PORTFOLIO</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
       <i class="fa fa-bars"></i>
     </a>
   </nav>
 
   <!-- Hero Section -->
-  <header style="background-color: var(--main); max-width: 1600px; margin: 0 auto;">
-    <section class="homepage homepage_container">
-      <div class="homepage_left">
-        <div class="homepage_text_cont">
-          <div class="homepage_text">
-            <p>Hello! I'm Regina, a GIS & Satellite Data Science Specialist driven by a passion for tackling pressing environmental issues using Earth observation and satellite data. I specialize in geospatial analysis, machine learning, and satellite imagery interpretation. Explore my work below.</p>
-          </div>
-          <a href="portfolio.html" class="button">Recent Work</a>
-        </div>
-      </div>
-      <div class="homepage_right">
-        <img src="images/home-bg.jpg" alt="Satellite imagery" class="homepage_image" />
-      </div>
-    </section>
-  </header>
-
-  <!-- About Section (Responsive for Desktop and Mobile) -->
-  <section class="grid_background_col">
-    <!-- Desktop -->
-    <div class="desktop about_cont">
-      <div class="about-left">
-        <img src="images/headshot_crop.jpg" alt="Regina Deri headshot" class="about-image" />
-      </div>
-      <div class="about-right">
-        <h1 style="color: var(--accent2); text-align: left;">ABOUT ME</h1>
-        <p style="max-width: 500px;">Hi! I'm Regina, a GIS and Remote Sensing Specialist passionate about leveraging Earth observation and geospatial analysis to address environmental challenges.</p>
-        <a class="button_blk" href="about.html">More About Me</a>
+  <section class="homepage_container">
+    <div class="homepage_left">
+      <div class="homepage_text_cont">
+        <p>Hello! I'm Regina, a GIS & Satellite Data Science Specialist passionate about tackling pressing environmental challenges using satellite data. Explore my work below.</p>
+        <a href="portfolio.html" class="button">Recent Work</a>
       </div>
     </div>
+    <div class="homepage_right">
+      <img src="images/home-bg.jpg" alt="Satellite imagery" class="homepage_image" />
+    </div>
+  </section>
 
-    <!-- Tablet & Mobile -->
-    <div class="tablet_device_1000px about_tablet_cont">
-      <div class="about-tablet-left">
-        <img src="images/headshot_crop.jpg" alt="Regina Deri headshot" class="about-tablet-image" />
-      </div>
-      <div class="about-tablet-right">
-        <h1 style="color: var(--accent2);">ABOUT ME</h1>
-        <p style="font-size: 20px;">Hi! I'm Regina, a GIS and Remote Sensing Specialist passionate about leveraging Earth observation and geospatial analysis to address environmental challenges.</p>
-        <a class="button_blk" href="about.html">More About Me</a>
-      </div>
+  <!-- About Section -->
+  <section class="about_cont">
+    <div class="about-left">
+      <img src="images/headshot_crop.jpg" alt="Regina Deri headshot" class="about-image" />
+    </div>
+    <div class="about-right">
+      <h1>ABOUT ME</h1>
+      <p>Hi! I'm Regina, a GIS and Remote Sensing Specialist passionate about leveraging Earth observation and geospatial analysis to address environmental challenges.</p>
+      <a href="about.html" class="button_blk">More About Me</a>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="about_me_interests_cont_pg2">
-    <div class="about_me_interests_pg2">
-      <h2 style="font-family: 'Montserrat', sans-serif;">Contact</h2>
-      <p>Please feel free to contact me via email or LinkedIn below.</p>
-
-      <h2 style="font-family: 'Montserrat', sans-serif;">Email</h2>
-      <p>
-        <a href="mailto:reginaderi19@gmail.com" style="color: white; text-decoration: none;">
-          reginaderi19@gmail.com
-        </a>
-      </p>
-    </div>
+  <section class="contact_section">
+    <h2>Contact</h2>
+    <p>You can reach me via email or LinkedIn below.</p>
+    <p>Email: <a href="mailto:reginaderi19@gmail.com">reginaderi19@gmail.com</a></p>
   </section>
-
-  <hr style="color: white; height: 3px;" />
 
   <!-- Footer -->
   <footer>
     <div class="top_footer">
-      <p style="font-size: 24px; font-family: 'Montserrat', sans-serif;">Contact Me</p>
-      <a href="http://www.linkedin.com/in/regina-torkwase-deri" aria-label="LinkedIn">
-        <i class="fa fa-linkedin"></i>
-      </a>
-      <a href="https://simplygina.github.io/gina/" aria-label="GitHub">
-        <i class="fa fa-github"></i>
-      </a>
+      <p>Contact Me</p>
+      <a href="http://www.linkedin.com/in/regina-torkwase-deri"><i class="fa fa-linkedin"></i></a>
+      <a href="https://simplygina.github.io/gina/"><i class="fa fa-github"></i></a>
     </div>
     <div class="bottom_footer">
-      <p><small>&copy; 2025 Regina Deri</small></p>
+      <p>&copy; 2025 Regina Deri</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="scripts/icon.js"></script>
-  <script src="scripts/scroll.js"></script>
-  <script src="scripts/slider.js"></script>
-  <script src="scripts/lazy-load.js"></script>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("mynavbar");
+      nav.classList.toggle("responsive");
+    }
+  </script>
 </body>
 </html>
