@@ -1,109 +1,67 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Deri Regina | Portfolio</title>
+    <title>Caroline Williams | Portfolio</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles/style.css" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <style>
-    /* HEADER NAVBAR STYLE LIKE IMAGE */
-.navbar {
+    <style>
+  .portrow {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #cdb29a;
-  padding: 20px 0;
-  font-family: 'Montserrat', sans-serif;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.navbar a {
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 0 20px;
+.portcolumn {
+  flex: 0 0 32%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.portcontent {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.portcontent:hover {
+  transform: scale(1.02);
+}
+
+.portcontent img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.port_txt {
   text-decoration: none;
+  color: #000;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
-}
-/* CARD SPACING + SECTION PADDING */
-.portfolio-section {
-  padding: 60px 40px;
-  background-color: #f8f9fa;
+.port_txt h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  padding: 15px;
 }
 
-.portfolio-grid {
-  gap: 30px;
+@media screen and (max-width: 1024px) {
+  .portcolumn {
+    flex: 0 0 48%;
+  }
 }
 
-.portfolio-card {
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease;
+@media screen and (max-width: 600px) {
+  .portcolumn {
+    flex: 0 0 100%;
+  }
 }
 
-.portfolio-card:hover {
-  transform: scale(1.01);
-}
-
-    .portfolio-card img {
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .modal-lg {
-      max-width: 80%;
-    }
-
-    .modal-content {
-      border-radius: 10px;
-    }
-
-    .modal-body {
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .modal-body h3 {
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 15px;
-    }
-
-    .portfolio-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .portfolio-item {
-      flex: 1 1 calc(25% - 30px); /* 4 per row */
-    }
-
-    @media (max-width: 992px) {
-      .portfolio-item {
-        flex: 1 1 calc(50% - 30px);
-      }
-    }
-
-    @media (max-width: 576px) {
-      .portfolio-item {
-        flex: 1 1 100%;
-      }
-    }
-  </style>
+</style>
   </head>
     <!--- Navigation Bar --->
 <body>
@@ -111,7 +69,7 @@
     <div class="navbar" id="mynavbar">
       <a href="index.html">HOME</a>
       <a href="about.html">ABOUT ME</a>
-      <!-- <a href="resume.html">RESUME</a> -->
+      <a href="resume.html">RESUME</a>
       <a href="portfolio.html" class="active">PORTFOLIO</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -121,24 +79,78 @@
   <!--- Section 1: Title --->
   <div class="about_me_title">
     <div class="about_me_text">
-      <!-- <h1>PORTFOLIO</h1> -->
+      <h1>PORTFOLIO</h1>
     </div>
   </div>
 <!-- Portfolio Gallery Grid -->
 <div style="background-color: var(--alternative)">
   <div style="max-width: 1800px; margin: 0 auto !important; float: none !important;">
   <!--- Section 2a: GIS Portfolio control buttons --->
-  <!-- <div class="portfolio_cont">
-  <div id="myBtnContainer">
-    <button class="portbtn portactive" onclick="filterSelection('all')"> Show all</button>
-    <button class="portbtn" onclick="filterSelection('GIS')"> GIS</button>
-    <button class="portbtn" onclick="filterSelection('remotesensing')"> Remote Sensing</button>
-    <button class="portbtn" onclick="filterSelection('webmaps')"> Web Mapping</button>
-        <button class="portbtn" onclick="filterSelection('clark')"> Clark Labs</button>
-    <button class="portbtn" onclick="filterSelection('develop')"> NASA DEVELOP</button>
-  </div> -->
-<!-- <div class="portrow">
-  <div class="portcolumn GIS remotesensing develop">
+  <div class="portfolio_cont">
+          <!-- Portfolio Section -->
+<div style="background-color: var(--alternative)">
+  <div style="max-width: 1800px; margin: 0 auto; padding: 40px 20px;">
+    <div class="portrow">
+
+      <!-- Project 1 -->
+      <div class="portcolumn GIS remotesensing">
+        <div class="portcontent">
+          <a href="projects/mapping.html" class="port_txt">
+            <img src="projects/project1/1.png" alt="WCS Environmental Trends Analysis">
+            <h3>Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria (2015–2023)</h3>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="portcolumn GIS remotesensing">
+        <div class="portcontent">
+          <a href="projects/mapping.html" class="port_txt">
+            <img src="projects/project1/1.png" alt="WCS Environmental Trends Analysis">
+            <h3>Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria (2015–2023)</h3>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="portcolumn GIS remotesensing">
+        <div class="portcontent">
+          <a href="projects/mapping.html" class="port_txt">
+            <img src="projects/project1/1.png" alt="WCS Environmental Trends Analysis">
+            <h3>Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria (2015–2023)</h3>
+          </a>
+        </div>
+      </div>
+
+      <!-- To Add a new card for project copy below from projectN to end of comment
+        1. Copy from the start of Project N to the end of comment
+        2, Change the number in the class name from N to the next number in sequence
+        3. Change the image source to the new project image
+        4. Change the alt text to the new project name
+        5. Change the project name in the h3 tag to the new project name
+        6. Change the href link to the new project page
+        7. Change the project name in the h3 tag to the new project name
+        8. Save the file 
+      -->
+       <!-- Project N -->
+      <!-- <div class="portcolumn GIS remotesensing">
+        <div class="portcontent">
+          <a href="projects/mapping.html" class="port_txt">
+            <img src="projects/project1/1.png" alt="WCS Environmental Trends Analysis">
+            <h3>Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria (2015–2023)</h3>
+          </a>
+        </div>
+      </div> -->
+    
+
+      <!-- Add more .portcolumn blocks below for additional projects -->
+
+    </div>
+  </div>
+</div>
+
+                                                            
+  <!-- <div class="portcolumn GIS remotesensing develop">
     <div class="portcontent">
       <a href="projects/NASA-DEVELOP-PUP-Projects.html" target="" class="port_txt">
         <img src="images/2022Spring_PUP_UHEATUrban_WebsiteImage_v2.png" alt="NASA DEVELOP PUP Projects" style="width:100%">
@@ -175,19 +187,13 @@
   </div>
   <div class="portcolumn GIS remotesensing clark">
     <div class="portcontent">
-      <a href="projects/Clark_Labs_Pond_Aquaculture.html" target="" class="port_txt">
+      <a href="/projects/mapping.html" target="" class="port_txt">
       <img src="images/ClarkLabs_Pond.jpg" alt="Clark Labs Pond Aquaculture" style="width:100%">
       <h3 style="font-family: 'Montserrat', sans-serif;">Clark Labs Pond Aquaculture and Mangrove Land Cover Classification</h3>
       </a>
     </div>
   </div>
-  <div class="portcolumn GIS remotesensing">
-    <div class="portcontent">
-      <a href="projects/WCS-Environmental-Trends-Analysis.html" target="" class="port_txt">
-      <img src="images/wcs_project_image_crop.jpg" alt="WCS Environmental Trends Analysis" style="width:100%">
-      <h3 style="font-family: 'Montserrat', sans-serif;">WCS Environmental Trends Analysis Ruaha & Katavi National Parks</h3>
-      </a>
-    </div>
+  
   </div>
   <div class="portcolumn webmaps">
     <div class="portcontent">
@@ -263,265 +269,33 @@
   </div>
 </div> -->
 <!-- END GRID -->
-  <!-- PORTFOLIO GRID -->
-  <div class="portfolio-grid" id="portfolioGrid">
-
-    <!-- 🔥 Card 1 -->
-    <div class="portfolio-item GIS develop">
-      <div class="card portfolio-card h-100" data-bs-toggle="modal" data-bs-target="#modal1">
-        <img src="images/image.png" class="card-img-top" alt="Wildfire">
-        <div class="card-body">
-          <h5 class="card-title">Wildfire Severity Assessment</h5>
-          <p class="card-text">Tenerife wildfire (2023) assessment using Sentinel-2 imagery.</p>
-        </div>
-      </div>
-    </div>
-
-     <!-- 🔥 Card 2 -->
-     <div class="portfolio-item GIS develop">
-      <div class="card portfolio-card h-100" data-bs-toggle="modal" data-bs-target="#modal2">
-        <img src="images/image2.png" class="card-img-top" alt="Wildfire">
-        <div class="card-body">
-          <h5 class="card-title">Mapping and Monitoring Urban Expansion in Makurdi</h5>
-          <p class="card-text">This project analyzes LULC changes, with a specific focus on urban expansion, in Makurdi</p>
-        </div>
-      </div>
-    </div>
-
-     <!-- 🔥 Card 3 -->
-     <div class="portfolio-item GIS develop">
-      <div class="card portfolio-card h-100" data-bs-toggle="modal" data-bs-target="#modal3">
-        <img src="images/image3.png" class="card-img-top" alt="Wildfire">
-        <div class="card-body">
-          <h5 class="card-title">Spatial Analysis of Oil and Gas Pipeline Accidents in Texas</h5>
-          <p class="card-text">Conducted a comprehensive spatial analysis of historical pipeline accidents.</p>
-        </div>
-      </div>
-    </div>
-
-     <!-- 🔥 Card 4 -->
-     <div class="portfolio-item GIS develop">
-      <div class="card portfolio-card h-100" data-bs-toggle="modal" data-bs-target="#modal4">
-        <img src="images/image4.png" class="card-img-top" alt="Wildfire">
-        <div class="card-body">
-          <h5 class="card-title">Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria</h5>
-          <p class="card-text">Developed a satellite-based approach to map and analyze landfill expansion in Lagos, Nigeria, using Sentinel-2 and Landsat imagery..</p>
-        </div>
-      </div>
-    </div>
-
-<!-- 📦 MODALS -->
-
-<!-- Modal 1 -->
-<div class="modal fade" id="modal1" tabindex="-1">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">   
-    <div class="modal-body d-flex flex-wrap">
-      <div class="col-md-6">
-        <img src="images/image.png" alt="Wildfire Project">
-      </div>
-      <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
-        <h3>Wildfire Severity Assessment (Tenerife, 2023)</h3>
-        <p>Sentinel-2 satellite analysis of fire-affected areas.</p>
-        <p><strong>Skills:</strong> Python, Remote Sensing, Raster Analysis<br>
-        <strong>Tools:</strong> Sentinel-2, Rasterio, Pandas</p>
-        <a href="documents/Wildfire Severity .pdf" target="_blank" class="btn btn-primary mt-3">View Project</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<!-- Modal 2 -->
-<!-- <div class="modal fade" id="modal2" tabindex="-1">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">   
-    <div class="modal-body d-flex flex-wrap">
-      <div class="col-md-6">
-        <img src="images/image2.png" alt="Wildfire Project">
-      </div>
-      <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
-        <h3>Mapping and Monitoring Urban Expansion in Makurdi, Nigeria (2001–2020) Using Remote Sensing</h3>
-        <p>This project analyzes LULC changes, with a specific focus on urban expansion, in Makurdi, Benue State, Nigeria, from 2001 to 2020, using remote sensing data</p>
-        <p><strong>Skills:</strong> Technologies & Skills Used <br>
-          ✅ Remote Sensing | ✅ GIS | ✅ QGIS/ArcGIS Pro | ✅ Satellite Data Analysis <br>
-          Data Sources: Landsat imagery (ETM, OLI) <br>
-          Tools: QGIS, ArcGIS, ERDAS IMAGINE, ENVI, Google Earth Engine (GEE) <br>
-          Techniques Used: Supervised classification, change detection analysis <br>
-          Validation: Accuracy assessment using ground-truth/reference data<br>
-        <a href="projects/NASA-DEVELOP-PUP-Projects.html" target="_blank" class="btn btn-primary mt-3">View Project</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div> -->
-
-<!-- Modal 3 -->
-<!-- <div class="modal fade" id="modal3" tabindex="-1">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">   
-    <div class="modal-body d-flex flex-wrap">
-      <div class="col-md-6">
-        <img src="images/image3.png" alt="Wildfire Project">
-      </div>
-      <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
-        <h3>Spatial Analysis of Oil and Gas Pipeline Accidents in Texas</h3>
-        <p>Conducted a comprehensive spatial analysis of historical pipeline accidents, enabling an evaluation of the potential human and environmental exposure within Texas.</p>
-        <p><strong>Skills:</strong> Technologies & Skills Used <br>
-          ✅ R ( sf, tidyverse,terra and mapsf) | ✅ GIS | ✅ Spatial analysis | ✅ Spatial statistics, Hotspot analysis (Local Moran’s)<br>
-          Data Sources & APIs: U.S. DOT Pipeline and Hazardous Materials Safety Administration dataset, U.S. Census Bureau (tidycensus package), Texas Water Development Board GIS data <br>
-          
-
-        <a href="projects/NASA-DEVELOP-PUP-Projects.html" target="_blank" class="btn btn-primary mt-3">View Project</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div> -->
-
-<!-- Modal 4 -->
-<!-- <div class="modal fade" id="modal4" tabindex="-1">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">   
-    <div class="modal-body d-flex flex-wrap">
-      <div class="col-md-6">
-        <img src="images/image2.png" alt="Wildfire Project">
-      </div>
-      <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
-        <h3>Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria</h3>
-        <p>Developed a satellite-based approach to map and analyze landfill expansion in Lagos, Nigeria, using Sentinel-2 and Landsat imagery.</p>
-        <p><strong>Skills:</strong> Technologies & Skills Used <br>
-          ✅ Remote Sensing | ✅ GIS | ✅ QGIS/ArcGIS Pro | ✅ Satellite Data Analysis <br>
-          Data Sources: Landsat imagery (ETM, OLI) <br>
-          Tools Used: QGIS, ArcGIS, ERDAS IMAGINE, ENVI, Google Earth Engine (GEE) <br>
-          Data Sources: Sentinel-2, and Landsat 8 <br>
-
-        <a href="projects/NASA-DEVELOP-PUP-Projects.html" target="_blank" class="btn btn-primary mt-3">View Project</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
--->
-
-<!-- Modal 2 -->
-<div class="modal fade" id="modal2" tabindex="-1">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">   
-    <div class="modal-body d-flex flex-wrap">
-      <div class="col-md-6">
-        <img src="images/image2.png" alt="Urban Expansion Project" class="img-fluid">
-      </div>
-      <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
-        <h3>Mapping and Monitoring Urban Expansion in Makurdi</h3>
-        <p>This project analyzes LULC changes, with a specific focus on urban expansion, in Makurdi, Benue State, Nigeria, from 2001 to 2020, using remote sensing data.</p>
-        <p><strong>Skills:</strong><br>
-          ✅ Remote Sensing | ✅ GIS | ✅ QGIS/ArcGIS Pro | ✅ Satellite Data Analysis<br>
-          <strong>Tools:</strong> QGIS, ArcGIS, ERDAS IMAGINE, ENVI, Google Earth Engine (GEE)<br>
-          <strong>Techniques:</strong> Supervised classification, change detection, accuracy assessment
-        </p>
-        <a href="documents/landuse project.pdf" target="_blank" class="btn btn-primary mt-3">View Project</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- Modal 3 -->
-<div class="modal fade" id="modal3" tabindex="-1">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">   
-    <div class="modal-body d-flex flex-wrap">
-      <div class="col-md-6">
-        <img src="images/image3.png" alt="Pipeline Accidents Project" class="img-fluid">
-      </div>
-      <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
-        <h3>Spatial Analysis of Oil and Gas Pipeline Accidents in Texas</h3>
-        <p>Conducted a comprehensive spatial analysis of historical pipeline accidents, enabling an evaluation of the potential human and environmental exposure within Texas.</p>
-        <p><strong>Skills:</strong><br>
-          ✅ R (sf, tidyverse, terra, mapsf) | ✅ GIS | ✅ Spatial analysis & statistics (Local Moran’s)<br>
-          <strong>Data Sources:</strong> U.S. DOT PHMSA, U.S. Census (tidycensus), Texas Water Development Board
-        </p>
-        <a href="documents/Pipeline Accidents .pdf" target="_blank" class="btn btn-primary mt-3">View Project</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- Modal 4 -->
-<div class="modal fade" id="modal4" tabindex="-1">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">   
-    <div class="modal-body d-flex flex-wrap">
-      <div class="col-md-6">
-        <img src="images/image4.png" alt="Landfill Dynamics Project" class="img-fluid">
-      </div>
-      <div class="col-md-6 ps-md-4 pt-3 pt-md-0">
-        <h3>Mapping and Monitoring Landfill Dynamics in Lagos, Nigeria</h3>
-        <p>Developed a satellite-based approach to map and analyze landfill expansion in Lagos, Nigeria, using Sentinel-2 and Landsat imagery.</p>
-        <p><strong>Skills:</strong><br>
-          ✅ Remote Sensing | ✅ GIS | ✅ QGIS/ArcGIS Pro | ✅ Classification Analysis<br>
-          <strong>Data Sources:</strong> Sentinel-2, Landsat 8<br>
-          <strong>Tools:</strong> GEE, QGIS, ENVI, ArcGIS, ERDAS IMAGINE
-        </p>
-        <a href="documents/First project.pdf" target="_blank" class="btn btn-primary mt-3">View Project</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
 </div>
 </div>
 </div>
   <!--- Section 3: Contact Information --->
-   <!--- Section 4: Contact Information --->
-   <div class="about_me_interests_cont_pg2">
+  <div class="about_me_interests_cont_pg2">
     <div class="about_me_interests_pg2">
       <br>
       <h2 style="font-family: 'Montserrat', sans-serif;">Contact</h2>
       <br>
-      <p>Please feel free to contact me at my email address or through my LinkedIn account below.</p>
+      <p>Please feel free to contact me at my email address or through my LinkedIn Account below.</p>
       <br>
       <h2 style="font-family: 'Montserrat', sans-serif;">Email</h2>
       <br>
-      <p >
-        <a style="color: white; text-decoration: none;" href="mailto:reginaderi19@gmail.com"><p>reginaderi19@gmail.com</a></p
+      <p>cawilliams719@gmail.com</p>
       <br>
     </div>
   </div>
-  <hr style="color: white; width: auto; height: 3px;">
   <!--- Footer --->
   <div class="top_footer">
     <p style="font-size: 24px; font-family: 'Montserrat', sans-serif;">Contact Me</p>
     <a href="https://www.linkedin.com/in/caroline-ann-williams/"><i class="fa fa-linkedin"></i></a>
-    <a href="https://github.com/simplygina"><i class="fa fa-github"></i></a>
+    <a href="https://github.com/cawilliams719"><i class="fa fa-github"></i></a>
   </div>
   <div class="bottom_footer">
-    <p><small>&copy; Copyright 2025, Regina Deri</small></p>
+    <p><small>&copy; Copyright 2023, Caroline Williams</small></p>
   </div>
   <script src="scripts/filter.js"></script>
   <script src="scripts/icon.js"></script>
-  <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Filter Logic -->
-<script>
-  function filterSelection(category) {
-    const items = document.querySelectorAll('.portfolio-item');
-    if (category === 'all') category = '';
-    items.forEach(item => {
-      item.style.display = item.classList.contains(category) || category === '' ? 'block' : 'none';
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    filterSelection('all');
-  });
-</script>
-
-</body>
-</html>
-
   </body>
 </html>
